@@ -44,8 +44,54 @@ while (vuelta < 50) {
   azarNumber2 = azarNumber2 == 0 ? 1 : azarNumber2; // If ternario : Operador ternario
 
   let sumDicesValues = azarNumber1 + azarNumber2;
-  diceValuesRound.push(sumDicesValues);
+
+  let lapValues = {
+    number1: azarNumber1,
+    number2: azarNumber2,
+    total: sumDicesValues,
+  };
+
+  diceValuesRound.push(lapValues);
   vuelta++;
 }
 
-console.log(diceValuesRound);
+let listDiceValuesHTML = document.querySelector("#ex3 #list-values-dices");
+
+// console.log(diceValuesRound);
+listDiceValuesHTML.innerHTML = "";
+for (let i = 0; i < diceValuesRound.length; i++) {
+  let element = diceValuesRound[i];
+  listDiceValuesHTML.innerHTML += `<li> Dado 1: ${element.number1} | Dado 2: ${element.number2}| Suma: ${element.total}</li>`;
+}
+
+// Funciones - Ejercicio 1
+
+let inputOddEvenHTML = document.querySelector("#nro-user-oddEven");
+let captionResultOddEvenHTML = document.querySelector("#fnex1 #caption-result");
+
+const parOImpar = (nro) => {
+  let resultado = "";
+  if (nro % 2 === 0) {
+    resultado = "par";
+  } else {
+    resultado = "impar";
+  }
+  return resultado;
+};
+
+inputOddEvenHTML.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    console.log(e.target.validity.valid)
+    if(e.target.validity.valid){
+      let userInput = Number(inputOddEvenHTML.value);
+      let result = parOImpar(userInput);
+      captionResultOddEvenHTML.innerText = `el nro ${userInput} es ${result}`;
+    }else{
+      captionResultOddEvenHTML.innerText = `"${inputOddEvenHTML.value}" no es una entrada valida`;
+    }
+  }
+  // contador++;
+  // captionResultOddEvenHTML.innerText = `Hice click ${contador} veces`;
+});
+// QUE SE ASIGNA A UNA VARIABLE?
+// EL RESULTADO DE EVALUAR UNA EXPRESION

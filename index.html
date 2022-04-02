@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
-<body>
+<body>  
     <!-- <style>
         #ex1 .list{
             
@@ -23,10 +23,28 @@
         </ul>
     </section>
 
+    <!-- <style>
+      #ex3 #list-values-dices{
+        border: 10px #000 solid;
+      }
+    </style> -->
     <section id="ex3">
         <article class="exercise">
             3- Escribir un script que simule el lanzamiento de dos dados. Hacer uso de la función Math.random para obtener números aleatorios entre 1 y 6 para cada uno de los lanzamientos de los dados. Sumar el resultado de lanzar dos dados y anotar en un array el número de apariciones de dicha suma, repitiendo 50 veces esta operación.
         </article>
+        <ol id="list-values-dices">
+        </ol>
+    </section>
+
+    <hr>
+    <cite>Funciones</cite>
+    <section id="fnex1">
+        <article class="exercise">
+          1- Escribir el código de una función a la que se pasa como parámetro un número entero y devuelve como resultado una cadena de texto que indica si el número es par o impar. Mostrar por pantalla el resultado devuelto por la función.
+        </article>
+        <label for="nro-user-oddEven">Ingrese un numero</label>
+        <input type="text" class="nro_only" name="nro-user-oddEven" pattern="[0-9]{1,}" id="nro-user-oddEven">
+        <p id="caption-result"></p>
     </section>
 
     <script src="app.js"></script>

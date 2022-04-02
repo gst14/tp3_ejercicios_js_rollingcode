@@ -12,3 +12,14 @@
     color: #fff;
     padding: 10px;
 }
+
+.nro_only{
+    border-color: green;
+    outline-color: green;
+    transition: all 700ms;
+}
+
+.nro_only:invalid{
+    border-color: red;
+    outline-color: red;
+}
